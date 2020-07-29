@@ -93,23 +93,23 @@ def params_pipelines(v):
         },
     }
 
-    vals["GLOBAL_NMF_K"] = 4
-    vals["GLOBAL_NMF_EPOCHS"] = 20
+    vals["GLOBAL_NMF_K"] = 1#4
+    vals["GLOBAL_NMF_EPOCHS"] = 1#20
 
     if "NO_USER_CLUSTERS" not in vals:
-        vals["NO_USER_CLUSTERS"] = 7
+        vals["NO_USER_CLUSTERS"] = 1#7
     if "NO_ITEM_CLUSTERS" not in vals:
-        vals["NO_ITEM_CLUSTERS"] = 2
+        vals["NO_ITEM_CLUSTERS"] = 1#2
     if "LOCAL_U_NMF_K" not in vals:
-        vals["LOCAL_U_NMF_K"] = 30
+        vals["LOCAL_U_NMF_K"] = 1#30
     if "LOCAL_I_NMF_K" not in vals:
-        vals["LOCAL_I_NMF_K"] = 30
+        vals["LOCAL_I_NMF_K"] = 1#30
     if "LOCAL_U_NMF_EPOCHS" not in vals:
-        vals["LOCAL_U_NMF_EPOCHS"] = 8
+        vals["LOCAL_U_NMF_EPOCHS"] = 1#8
     if "LOCAL_I_NMF_EPOCHS" not in vals:
-        vals["LOCAL_I_NMF_EPOCHS"] = 10
+        vals["LOCAL_I_NMF_EPOCHS"] = 1#10
     if "NO_FOLDS" not in vals:
-        vals["NO_FOLDS"] = 2    
+        vals["NO_FOLDS"] = 1#2    
     
     return vals
 

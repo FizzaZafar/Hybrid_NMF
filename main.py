@@ -36,17 +36,9 @@ def run(args):
     
     else:
         logging.info("Running both imputation and pipelines")
-        if args.impute_params == None:
-            logging.info("Running imputation with default params")
-            args.impute_params = argparser.params_imputation("{}")
-        else:
-            logging.info("Running imputation with params: "+str(args.impute_params))
-        
-        if args.pipeline2_params == None:
-            logging.info("Running pipelines with default params")
-            args.pipeline2_params = argparser.params_pipelines("{}")
-        else:
-            logging.info("Running pipelines with params: "+str(args.pipeline2_params))
+        only_pipeline1(args)
+        only_pipeline2(args)
+        return
 
 
 def only_pipeline1(args):

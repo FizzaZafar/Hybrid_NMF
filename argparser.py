@@ -47,6 +47,7 @@ def params_imputation(v):
     return vals
 
 def gs_pipelines(v):
+    print(v)
     try:
         vals = json.loads(v)
     except: 
@@ -63,7 +64,7 @@ def gs_pipelines(v):
             "LOCAL_I_NMF_EPOCHS" : {"type" : "array","items":{"type": "number"}},
             "NO_FOLDS" : {"type": "number"},
         },
-        "required":["NO_USER_CLUSTERS","NO_ITEM_CLUSTERS","LOCAL_U_NMF_K","LOCAL_I_NMF_K","LOCAL_U_NMF_EPOCHS","LOCAL_I_NMF_EPOCHS","NUM_FOLDS"]
+        "required":["NO_USER_CLUSTERS","NO_ITEM_CLUSTERS","LOCAL_U_NMF_K","LOCAL_I_NMF_K","LOCAL_U_NMF_EPOCHS","LOCAL_I_NMF_EPOCHS"]
     }
     
     try:

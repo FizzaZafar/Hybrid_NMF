@@ -40,22 +40,20 @@ def pipe2(grid_search_pipelines):
     results = []
     for user_cluster in grid_search_pipelines["NO_USER_CLUSTERS"]:
         for item_cluster in grid_search_pipelines["NO_ITEM_CLUSTERS"]:
-            for global_nmf_k in grid_search_pipelines["GLOBAL_NMF_K"]:
                 for local_u_nmf_k in grid_search_pipelines["LOCAL_U_NMF_K"]:
                     for local_i_nmf_k in grid_search_pipelines["LOCAL_I_NMF_K"]:
-                        for global_nmf_epochs in grid_search_pipelines["GLOBAL_NMF_EPOCHS"]:
                             for local_u_nmf_epochs in grid_search_pipelines["LOCAL_U_NMF_EPOCHS"]:
                                 for local_i_nmf_epochs in grid_search_pipelines["LOCAL_I_NMF_EPOCHS"]:
                                     rmse = []
                                     params = {
                                         "NO_USER_CLUSTERS":user_cluster, 
                                         "NO_ITEM_CLUSTERS":item_cluster,
-                                        "GLOBAL_NMF_K":global_nmf_k,
                                         "LOCAL_U_NMF_K":local_u_nmf_k,
                                         "LOCAL_I_NMF_K":local_i_nmf_k,
-                                        "GLOBAL_NMF_EPOCHS":global_nmf_epochs,
                                         "LOCAL_U_NMF_EPOCHS":local_u_nmf_epochs,
-                                        "LOCAL_I_NMF_EPOCHS":local_i_nmf_epochs
+                                        "LOCAL_I_NMF_EPOCHS":local_i_nmf_epochs,
+                                        "GLOBAL_NMF_EPOCHS":1,#20,
+                                        "GLOBAL_NMF_K":1#4
                                     }
                                     k=grid_search_pipelines["NO_FOLDS"]
                                     for i in range(0,k):
@@ -65,7 +63,7 @@ def pipe2(grid_search_pipelines):
                                         rmse.append(pipeline2.do(params=params, gen_submission=False, validate=True))
                                     params["MEAN_RMSE"]=np.mean(rmse)
                                     results.append(params)
-    f = open("cv.json","w")
+    f = open("results/cv.json","w")
     f.write(json.dumps(results))
 
                                     

@@ -73,7 +73,6 @@ def user_factorization(data_raw,user_clusters,params):
     trainset = dataset.build_full_trainset()
     algo = NMF(n_factors=n_factors, n_epochs=params["LOCAL_U_NMF_EPOCHS"], verbose=True)
     algo.fit(trainset)
-    #u_i.rename(columns={"User":"uid","Movie":"iid","Prediction":"est"},inplace=True)
     testset = trainset.build_testset()
     preds = algo.test(testset)
     predictions_train = pd.DataFrame(preds)

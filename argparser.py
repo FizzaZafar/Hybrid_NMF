@@ -31,8 +31,7 @@ def params_imputation(v):
         "type" : "object",
         "properties" : {
         "FACTORS" : {"type" : "number"},
-        "EPOCHS" : {"type" : "number"},
-        "NO_FOLDS":{"type": "number"}
+        "EPOCHS" : {"type" : "number"}
         }
     }
 
@@ -45,8 +44,6 @@ def params_imputation(v):
         vals["FACTORS"] = 900
     if "EPOCHS" not in vals:
         vals["EPOCHS"] = 175
-    if "NO_FOLDS" not in vals:
-        vals["NO_FOLDS"] = 2
     return vals
 
 def gs_pipelines(v):

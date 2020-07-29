@@ -1,0 +1,5 @@
+{"algo": "NMF", "params": {"n_factors": 200, "n_epochs": 200, "verbose": true, "biased": true}, "rmse": 1.0714975307366585}
+{"algo": "SVDpp", "params": {}, "rmse": 1.018125599747829}
+{"algo": "KNN", "params": {}, "rmse": 1.010314712303084}
+{"algo": "Baseline", "params": {}, "rmse": 0.9996473691714133}
+{"algo": "Random", "params": {}, "rmse": 1.4816202666456308}

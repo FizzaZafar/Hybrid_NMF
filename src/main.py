@@ -58,7 +58,7 @@ def only_pipeline2(args):
         args.pipeline2_params = argparser.params_pipelines("{}")
     else:
         logging.info("Running pipelines with params: "+str(args.pipeline2_params))
-    pipeline2.do(args.pipeline2_params,args.gen_submission)
+    pipeline2.do(args.pipeline2_params,args.gen_submission,args.blending_model)
     
 
 def main():

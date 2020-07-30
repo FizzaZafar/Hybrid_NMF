@@ -127,7 +127,7 @@ def merge(data_raw,regressors_train,user_df,item_df):
   return (merge2,data_raw)
 
 def train(data_raw, name):
-  model = common.model[name].fit(data_raw[["regressed","items","users"]],data_raw[["Prediction"]].to_numpy().reshape((data_raw.shape[0],)))
+  model = common.models[name].fit(data_raw[["regressed","items","users"]],data_raw[["Prediction"]].to_numpy().reshape((data_raw.shape[0],)))
   logging.info("return from model")
   return model
 
@@ -163,15 +163,15 @@ def generate_submission(model,data_sub,regressors_test,merge2):
   logging.info("return from gen_submission")
 
 
-def do(params,gen_submission,validate=False):
+def do(params,gen_submission,blending_model,validate=False):
   logging.info("in pipeline2.do")
   if(not validate):
     data_raw, data_sub = common.read_data(DATA_TRAIN,SAMPLE_SUBMISSION)
   else:
-    DATA_TRAIN = "../data/train.csv"
-    DATA_VAL = "../data/val.csv"
-    data_raw, data_sub = common.read_data(DATA_TRAIN,SAMPLE_SUBMISSION)
-    data_val,_=common.read_data(DATA_VAL,SAMPLE_SUBMISSION)
+    TRAIN = "../data/train.csv"
+    VAL = "../data/val.csv"
+    data_raw, data_sub = common.read_data(TRAIN,SAMPLE_SUBMISSION)
+    data_val,_=common.read_data(VAL,SAMPLE_SUBMISSION)
   
   preds_mat = np.load('../results/imputed_preds.npz', allow_pickle=True)['arr_0']
   preds = pd.DataFrame(preds_mat).reset_index().melt('index')
@@ -182,7 +182,7 @@ def do(params,gen_submission,validate=False):
   user_df = user_factorization(data_raw,user_clusters,params)
   item_df = item_factorization(data_raw,item_clusters,user_df,params)
   merge2,data_raw = merge(data_raw,regressors_train,user_df,item_df)
-  model = train(data_raw)
+  model = train(data_raw, blending_model)
 
   if validate:
     regressors_val = get_regressors(preds,data_val)
@@ -193,7 +193,7 @@ def do(params,gen_submission,validate=False):
   if gen_submission:
     regressors_test = get_regressors(preds,data_sub)
     generate_submission(model,data_sub,regressors_test,merge2)
-
+  print("rmse: ",rmse)
   return rmse
   
 

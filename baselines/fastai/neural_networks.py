@@ -17,10 +17,10 @@ import tensorflow as tf
 
 """# Read Cleaned Data"""
 
-data_raw = pd.read_csv("data_train_clean.csv")
+data_raw = pd.read_csv("../../data/data_train_clean.csv")
 data_raw.shape
 
-data_sub = pd.read_csv("sampleSubmission_clean.csv")
+data_sub = pd.read_csv("../../data/sampleSubmission_clean.csv")
 data_sub.shape
 
 data = CollabDataBunch.from_df(data_raw, seed=42, valid_pct=0.2, user_name='User', item_name='Movie',
@@ -36,28 +36,3 @@ min_grad_lr = learn.recorder.min_grad_lr
 
 learn.fit_one_cycle(5,0.0001)
 learn.fit_one_cycle(2,min_grad_lr)
-
-#learn.fit_one_cycle(1,0.00001)
-
-#learn.fit_one_cycle(5,0.0001)
-
-#learn.fit_one_cycle(1,0.00001)
-
-#learn.fit_one_cycle(1,0.00001)
-
-#learn.fit_one_cycle(1,0.00001)
-
-# preds = learn.get_preds(DatasetType.Test)
-
-# preds_all = (preds[0].T)[0].numpy()
-# data_sub["Prediction"] = pd.Series(preds_all)
-# data_sub.head()
-
-# data_sub["Id"] = data_sub.apply(lambda x:"r"+str(int(x["User"]))+"_c"+str(int(x["Movie"])),axis=1)
-
-# data_sub.head()
-
-# print(np.min(data_sub["Prediction"]))
-# np.max(data_sub["Prediction"])
-
-# data_sub[["Id","Prediction"]].to_csv("nn_200_new2.csv",index=False)

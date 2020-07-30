@@ -16,6 +16,8 @@ def parse_args():
     parser.add_argument("--grid_search_pipeline2",type=argparser.gs_pipelines, metavar='{"NO_USER_CLUSTERS": [required], "NO_ITEM_CLUSTERS": [required], "GLOBAL_NMF_K": [required], "LOCAL_U_NMF_K": [required], "LOCAL_I_NMF_K": [required], "GLOBAL_NMF_EPOCHS": [required], "LOCAL_U_NMF_EPOCHS": [required], "LOCAL_I_NMF_EPOCHS": [required], "NO_FOLDS":number}',help= "perform a grid search on pipeline params and sets --pipelines_only=True")
     parser.add_argument("--pipeline2_params",type= argparser.params_pipelines,metavar= '{"NO_USER_CLUSTERS": 7, "NO_ITEM_CLUSTERS": 2, "GLOBAL_NMF_K": 4, "LOCAL_U_NMF_K": 30, "LOCAL_I_NMF_K": 30, "GLOBAL_NMF_EPOCHS": 20, "LOCAL_U_NMF_EPOCHS": 8, "LOCAL_I_NMF_EPOCHS": 10}',help="only considered if --grid_search_pipeline2 is not specified")
     parser.add_argument("--gen_submission",type=bool,default=True,help="generate the submission csv")
+    parser.add_argument("--blending_model",type=str,default="ElasticNetCV",choices=["LinearRegression","LassoCV","ElasticNetCV","StackingRegressor","RidgeCV","SGDRegressor","Perceptron"], help="blending models")
+
     args = parser.parse_args()
     print(args)
     return args

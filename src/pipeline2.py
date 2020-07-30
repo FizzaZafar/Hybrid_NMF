@@ -13,6 +13,7 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import mean_squared_error
 from sklearn.cluster import KMeans
 from sklearn.linear_model import ElasticNetCV
+from sklearn.linear_model import LassoCV
 from sklearn.metrics import mean_squared_error
 import json
 import logging
@@ -125,8 +126,8 @@ def merge(data_raw,regressors_train,user_df,item_df):
   logging.info("return from merge")
   return (merge2,data_raw)
 
-def train(data_raw):
-  model = ElasticNetCV(alphas=np.linspace(0.0083,0.1,100)).fit(data_raw[["regressed","items","users"]],data_raw[["Prediction"]].to_numpy().reshape((data_raw.shape[0],)))
+def train(data_raw, name):
+  model = common.model[name].fit(data_raw[["regressed","items","users"]],data_raw[["Prediction"]].to_numpy().reshape((data_raw.shape[0],)))
   logging.info("return from model")
   return model
 
@@ -157,7 +158,7 @@ def generate_submission(model,data_sub,regressors_test,merge2):
   data_sub["User"] = data_sub["User"]+1
   data_sub["Movie"] = data_sub["Movie"]+1
   data_sub["Id"] = data_sub.apply(lambda x:"r"+str(int(x["User"]))+"_c"+str(int(x["Movie"])),axis=1)
-  sub_str = "results/submission.csv"
+  sub_str = "../results/submission.csv"
   data_sub[["Id","Prediction"]].to_csv(sub_str,index=False)
   logging.info("return from gen_submission")
 
@@ -167,12 +168,12 @@ def do(params,gen_submission,validate=False):
   if(not validate):
     data_raw, data_sub = common.read_data(DATA_TRAIN,SAMPLE_SUBMISSION)
   else:
-    DATA_TRAIN = "data/train.csv"
-    DATA_VAL = "data/val.csv"
+    DATA_TRAIN = "../data/train.csv"
+    DATA_VAL = "../data/val.csv"
     data_raw, data_sub = common.read_data(DATA_TRAIN,SAMPLE_SUBMISSION)
     data_val,_=common.read_data(DATA_VAL,SAMPLE_SUBMISSION)
   
-  preds_mat = np.load('results/imputed_preds.npz', allow_pickle=True)['arr_0']
+  preds_mat = np.load('../results/imputed_preds.npz', allow_pickle=True)['arr_0']
   preds = pd.DataFrame(preds_mat).reset_index().melt('index')
   preds.rename(columns={"index":"User", "variable":"Movie", "value":"Prediction"},inplace=True)
   regressors_train = get_regressors(preds,data_raw)

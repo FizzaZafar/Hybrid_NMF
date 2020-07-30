@@ -1,5 +1,17 @@
 
 import pandas as pd
+from sklearn.ensemble import StackingRegressor, GradientBoostingRegressor
+
+import sklearn.linear_model as sl
+models = { "LinearRegression": sl.LinearRegression(),
+           "LassoCV" : sl.LassoCV(),
+           "ElasticNetCV" : sl.ElasticNetCV(alphas=np.linspace(0.038,0.1,100)),
+           "StackingRegressor" : StackingRegressor([('SGD',sl.SGDRegressor()),('GBR', GradientBoostingRegressor())],verbose=1),
+           "RidgeCV" : sl.RidgeCV(),
+           "SGDRegressor" : sl.SGDRegressor(),
+           "Perceptron" : sl.Perceptron()
+}
+
 def read_data(train_file, test_file): 
     full_data = pd.read_csv(train_file)
     data_sub = pd.read_csv(test_file)

@@ -5,3 +5,6 @@ Autorec : Autoencoder meets Collaborative Filtering
 Python Tensorflow Implementation
 
 ml-1m RMSE : 0.8402
+
+-------
+To run this for baselines execute python3 main.py to run with default parameters

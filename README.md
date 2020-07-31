@@ -36,9 +36,11 @@ This project was used for in-class kaggle [competition](https://www.kaggle.com/c
 ## Baselines
 Different approaches to collaborative filtering were evaluated. More information can be found in [baselines](https://github.com/suprajasridhara/hybrid_nmf/tree/master/baselines)
 
-
 ## Implementation
 The implementation of our proposed method can be found in [\src](https://github.com/suprajasridhara/hybrid_nmf/tree/master/src). The command line interface supports different arguments. For more details run `python3 scr/main.py -h` or see [README](https://github.com/suprajasridhara/hybrid_nmf/blob/master/src/README.md)
+
+## Plots
+Different plots for the baselines and our implementation can be generated from the `/plots` folders. For more details see [README](https://github.com/suprajasridhara/hybrid_nmf/blob/master/plots/README.md)
 
 ## More Info
 For a more detailed discussion about the method and the evaluation steps used see the [report](https://TODO:add_link_to_report)

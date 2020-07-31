@@ -4,8 +4,14 @@ We have considered different existing collaborative filtering algorithms and eva
 
 ## Running baselines
 ### surprise
+To run the algorithms evaluated using the surprise library run `python3 surprise/bench_surprise`. This generates `surprise/summary.txt` with the validation RMSE for each of the algorithms evaluated
+
 ### fastai
-### Autorec
+To run neural networks developed using fastai package run `python3 fastai/neural_networks.py`. This generates `fastai/history.csv` with the RMSEs. 
+
+### autorec
+To run the Autorec algorithm on the given data set run `python3 autorec/main.py`. This generates files in `autorec/results/` with train and validation RMSE for each epoch.
+
 ## Evaluation
 | Algorithm       | Validation RMSE | Test RMSE | Parameters                                   |
 |-----------------|-----------------|-----------|----------------------------------------------|

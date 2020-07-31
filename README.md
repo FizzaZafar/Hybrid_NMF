@@ -1,6 +1,6 @@
 # hybrid_nmf
 ## Quickstart
-run `python3 main.py` to run the algorithm with default parameter values. 
+run `python3 src/main.py` to run the algorithm with default parameter values. 
 This generates `results/submission.csv` 
 
 ## Overview
@@ -17,6 +17,10 @@ This project was used for in-class kaggle [competition](https://www.kaggle.com/c
 The following existing approaches to collaborative filtering were evaluated. The table below enumerates their validation and test RMSE.
 
 More information can be found in [baselines](https://github.com/suprajasridhara/hybrid_nmf/tree/master/baselines)
+
+
+## Implementation
+The implementation of our proposed method can be found in [\src](https://github.com/suprajasridhara/hybrid_nmf/tree/master/src). The command line interface supports different arguments. For more details run `python3 scr/main.py -h' or see [README]()
 
 ## More Info
 For a more detailed discussion about the method and the evaluation steps used see the [report](https://TODO:add_link_to_report)

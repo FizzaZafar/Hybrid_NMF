@@ -1,4 +1,4 @@
-# hybrid_nmf
+# Hybrid_NMF
 ## Quickstart
 run `python3 src/main.py` to run the algorithm with default parameter values. 
 This generates `results/submission.csv` 

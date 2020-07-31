@@ -5,7 +5,8 @@ Run `python3 main.py` to generate the sumbmission file in `../results` with defa
 ## Command line arguments
 run `python3 main.py -h` to list all available command line arguments 
 
-`usage: main.py [-h] [--pipeline1_only PIPELINE1_ONLY]
+```
+usage: main.py [-h] [--pipeline1_only PIPELINE1_ONLY]
                [--grid_search_impute_nmf {"FACTORS":[required],"EPOCHS":[required]}]
                [--impute_params {"FACTORS":900,"EPOCHS":120}]
                [--pipeline2_only PIPELINE2_ONLY]
@@ -14,7 +15,7 @@ run `python3 main.py -h` to list all available command line arguments
                [--gen_submission GEN_SUBMISSION]
                [--blending_model {LinearRegression,LassoCV,ElasticNetCV,StackingRegressor,RidgeCV,SGDRegressor,Perceptron}]`
 
-`optional arguments:
+optional arguments:
   -h, --help            show this help message and exit
   --pipeline1_only PIPELINE1_ONLY
                         generate the imputation and run pipeline1 only
@@ -36,7 +37,8 @@ run `python3 main.py -h` to list all available command line arguments
   --gen_submission GEN_SUBMISSION
                         generate the submission csv
   --blending_model {LinearRegression,LassoCV,ElasticNetCV,StackingRegressor,RidgeCV,SGDRegressor,Perceptron}
-                        blending models`
+                        blending models
+```
 
 ## Default parameters
 

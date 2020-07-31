@@ -20,11 +20,12 @@ for i,p in enumerate(g.patches):
 	x,y = p.get_xy()
 	print(i,x,y)
 	p.set_xy((locs[x],y))
-	g.annotate(format(p.get_height(), '.5f'), (p.get_x() + p.get_width() / 2., p.get_height()), ha = 'center', va = 'center', xytext = (0, 10), textcoords = 'offset points', fontsize=10)
+	g.annotate(format(p.get_height(), '.4f'), (p.get_x() + p.get_width() / 2., p.get_height()), ha = 'center', va = 'center', xytext = (0, 10), textcoords = 'offset points', fontsize=10)
 
 labs = ax1.get_xticklabels()
 ax1.set_xticks([0,0.5,1])
 ax1.set_xlim(left=-0.2, right=1.2)
+ax1.set_ylim(bottom=0, top=1.2)	
 ax1.set_xticklabels(["Pipeline1", "Pipeline2", "Combined"])
 #sns.barplot(x="Algorithm",y="Test RMSE", data=df_baseline, ax=ax2)
 #plt.hist(x=[df_baseline["Test RMSE"], df_baseline["Validation RMSE"]],color=['r','b'], alpha=0.5)

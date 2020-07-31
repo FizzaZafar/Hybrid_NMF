@@ -45,4 +45,5 @@ Different plots for the baselines and our implementation can be generated from t
 ## More Info
 For a more detailed discussion about the method and the evaluation steps used see the [report](https://TODO:add_link_to_report)
 
-
+## Authors
+Fizza Zafar (fzafar@ethz.ch) and Supraja Sridhara(ssridhara@ethz.ch)

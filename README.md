@@ -1,4 +1,24 @@
 # Hybrid_NMF
+
+## Dependencies
+The project depends on the following packages to run
+
+numpy: `pip3 install numpy`
+
+pandas: `pip3 install panda`
+
+surprise: `pip3 install surprise`
+
+sklearn: `pip3 install sklearn`
+
+fastai: `pip3 install fastai`
+
+tensorflow: `pip3 install tensorflow`
+
+seaborn: `pip3 install seaborn`
+
+matplotlib: `pip3 install matplotlib`
+
 ## Quickstart
 run `python3 src/main.py` to run the algorithm with default parameter values. 
 This generates `results/submission.csv` 
@@ -14,9 +34,7 @@ Collaborative   filtering is   a   technique   used   by recommendation  systems
 This project was used for in-class kaggle [competition](https://www.kaggle.com/c/cil-collab-filtering-2020/). Data about the users and items can be found in the [repo](https://github.com/suprajasridhara/hybrid_nmf/blob/master/data/data_train_clean.csv) or on [kaggle](https://www.kaggle.com/c/cil-collab-filtering-2020/data).
 
 ## Baselines
-The following existing approaches to collaborative filtering were evaluated. The table below enumerates their validation and test RMSE.
-
-More information can be found in [baselines](https://github.com/suprajasridhara/hybrid_nmf/tree/master/baselines)
+Different approaches to collaborative filtering were evaluated. More information can be found in [baselines](https://github.com/suprajasridhara/hybrid_nmf/tree/master/baselines)
 
 
 ## Implementation

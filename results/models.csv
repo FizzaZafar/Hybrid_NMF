@@ -1,0 +1,15 @@
+Algorithm,RMSE,Type
+LinearRegression,0.86167,Validation
+LassoCV,0.86168,Validation
+ElasticNetCV,0.86663,Validation
+StackingRegressor,0.85843,Validation
+RidgeCV,0.86167,Validation
+SGDRegressor,0.86372,Validation
+Perceptron,2.04933,Validation
+LinearRegression,0.97684,Test
+LassoCV,0.97673,Test
+ElasticNetCV,0.97429,Test
+StackingRegressor,0.97783,Test
+RidgeCV,0.97684,Test
+SGDRegressor,0.97725,Test
+Perceptron,1.49512,Test

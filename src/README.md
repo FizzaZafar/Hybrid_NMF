@@ -51,13 +51,19 @@ are evaluated in order. Only one option can be run at a time.
 --pipeline1_only or default (both pipelines)
 --pipeline2_params is considered only when running with --pipeline2_only or default (both pipelines)
 --blending_model uses ElasticNetCV by default
+--gen_submission is True by default and generates the submission file when --pipeline2_only or default (both pipelines) is run
 
 ```
 ## Grid search
 ### Imputation
-Run `python3 main --grid_search_impute_nmf {"FACTORS":[comma separated values],"EPOCHS":[comma separated values]}`
+Run `python3 main --grid_search_impute_nmf {"FACTORS":[required],"EPOCHS":[required]}`
 This generates `results/gs_impute_results.csv` with RMSE values.
 
 The grid search for the imputation is always run with 5 fold cross validation. 
 
 ### Pipeline2
+Run `python3 main --grid_search_impute_nmf {"NO_USER_CLUSTERS": [required], "NO_ITEM_CLUSTERS": [required], "LOCAL_U_NMF_K": [required], "LOCAL_I_NMF_K": [required],  "LOCAL_U_NMF_EPOCHS": [required], "LOCAL_I_NMF_EPOCHS": [required], "NO_FOLDS":number}`
+This generates `results/csv.json` with RMSE values.
+
+`NO_FOLDS` is optional, default value is 2 i.e. by default the grid search is run with 2 fold cross validation
+

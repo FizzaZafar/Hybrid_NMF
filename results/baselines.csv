@@ -13,3 +13,5 @@ AutoRec,1.39741,Test
 Baseline,0.99768,Test
 Random,1.48097,Test
 KNN,1.22238,Test
+Hybrid NMF,0.86663,Validation
+Hybrid NMF,0.97429,Test

@@ -1,2 +1,0 @@
-split0_test_rmse,split1_test_rmse,split2_test_rmse,split3_test_rmse,split4_test_rmse,mean_test_rmse,std_test_rmse,rank_test_rmse,mean_fit_time,std_fit_time,mean_test_time,std_test_time,params,param_n_epochs,param_n_factors
-0.9808088562025861,0.9853112067481676,0.9841392305522536,0.9855507585025045,0.9887714473269507,0.9849162998664924,0.0025649788037790254,1,8884.009431409835,684.7440785441956,3.714448642730713,0.8622612095144279,"{'n_epochs': 150, 'n_factors': 700}",150,700

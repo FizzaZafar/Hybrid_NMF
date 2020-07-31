@@ -45,7 +45,7 @@ The implementation of the proposed method can be found in [/src](https://github.
 Different plots for the baselines and our implementation can be generated from the `/plots` folders. For more details see [README](https://github.com/suprajasridhara/hybrid_nmf/blob/master/plots/README.md)
 
 ## More Info
-For a more detailed discussion about the method and the evaluation steps used see the [report](https://TODO:add_link_to_report)
+For a more detailed discussion about the method and the evaluation steps used see the [report](https://github.com/suprajasridhara/hybrid_nmf/blob/master/report/report_with_declaration.pdf)
 
 ## Authors
 Fizza Zafar (fzafar@ethz.ch) and Supraja Sridhara(ssridhara@ethz.ch)

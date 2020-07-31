@@ -19,6 +19,8 @@ seaborn: `pip3 install seaborn`
 
 matplotlib: `pip3 install matplotlib`
 
+jsonschema: `pip3 install jsonschema`
+
 ## Quickstart
 run `python3 src/main.py` to run the algorithm with default parameter values. 
 This generates `results/submission.csv` 

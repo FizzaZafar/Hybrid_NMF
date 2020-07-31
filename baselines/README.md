@@ -1,6 +1,6 @@
 
 # Baselines
-We have considered different existing collaborative filtering algorithms and evaluated them on the data set
+ Different existing collaborative filtering algorithms are considered and evaluated on the data set
 
 ## Running baselines
 ### surprise

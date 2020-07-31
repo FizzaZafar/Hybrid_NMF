@@ -5,7 +5,7 @@ The project depends on the following packages to run
 
 numpy: `pip3 install numpy`
 
-pandas: `pip3 install panda`
+pandas: `pip3 install pandas`
 
 surprise: `pip3 install surprise`
 

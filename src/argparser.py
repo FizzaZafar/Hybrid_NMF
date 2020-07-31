@@ -43,7 +43,7 @@ def params_imputation(v):
     if "FACTORS" not in vals:
         vals["FACTORS"] = 900
     if "EPOCHS" not in vals:
-        vals["EPOCHS"] = 175
+        vals["EPOCHS"] = 185
     return vals
 
 def gs_pipelines(v):

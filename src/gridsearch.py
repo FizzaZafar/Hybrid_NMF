@@ -52,8 +52,8 @@ def pipe2(grid_search_pipelines):
                                         "LOCAL_I_NMF_K":local_i_nmf_k,
                                         "LOCAL_U_NMF_EPOCHS":local_u_nmf_epochs,
                                         "LOCAL_I_NMF_EPOCHS":local_i_nmf_epochs,
-                                        "GLOBAL_NMF_EPOCHS":1,#20,
-                                        "GLOBAL_NMF_K":1#4
+                                        "GLOBAL_NMF_EPOCHS":20,
+                                        "GLOBAL_NMF_K":4
                                     }
                                     k=grid_search_pipelines["NO_FOLDS"]
                                     for i in range(0,k):

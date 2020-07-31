@@ -7,18 +7,13 @@ import matplotlib.pyplot as plt
 import matplotlib as mp
 import ast
 
-df_global_nmf=pd.read_csv("../results/gs_impute_results.csv")
-df_tmp=pd.read_csv("../results/gs_impute_results_150_78_.csv")
-df_global_nmf["df"] = 1
-df_tmp["df"] = 2
-df_global_nmf = pd.concat([df_global_nmf,df_tmp])
-df_tmp=pd.read_csv("../results/gs_impute_results_150_78_1.csv")
-df_tmp["df"] = 2
-df_global_nmf = pd.concat([df_global_nmf,df_tmp])
+all_files=["gs_impute_results.csv", "gs_impute_results_1.csv", "gs_impute_results_2.csv", "gs_impute_results_3.csv", "gs_impute_results_4.csv", "gs_impute_results_5.csv","gs_impute_results_6.csv"]
+df_global_nmf = pd.concat([pd.read_csv("../results/"+fn) for fn in all_files], ignore_index=True)
 print(df_global_nmf.shape)
 piv = pd.pivot_table(df_global_nmf, values="mean_test_rmse",index="param_n_epochs", columns="param_n_factors")
 fig,ax = plt.subplots(1,1,figsize=(10,6))
-sns.heatmap(piv, cmap=sns.cubehelix_palette(8), ax=ax)
+#sns.scatterplot(x="param_n_epochs",y="param_n_factors",hue="mean_test_rmse",data=df_global_nmf)
+sns.heatmap(piv, ax=ax, cmap="YlGnBu")
 ax.set(xlabel="Epochs", ylabel="Factors")
 ax.invert_yaxis()
 plt.tight_layout()

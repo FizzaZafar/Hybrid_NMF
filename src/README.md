@@ -45,13 +45,11 @@ optional arguments:
 ### Notes
 
 ```
-The parameters [--grid_search_impute_nmf, --pipeline1_only, --grid_search_pipeline2, --pipeline2_only] are evaluated in order. Only one option can be run at a time. 
-
---impute_params is considered only when running with --pipeline1_only or default (both pipelines)
-
-
+The parameters [--grid_search_impute_nmf, --pipeline1_only, --grid_search_pipeline2, --pipeline2_only] 
+are evaluated in order. Only one option can be run at a time. 
+--impute_params is considered only when running with 
+--pipeline1_only or default (both pipelines)
 --pipeline2_params is considered only when running with --pipeline2_only or default (both pipelines)
-
 --blending_model uses ElasticNetCV by default
 
 ```

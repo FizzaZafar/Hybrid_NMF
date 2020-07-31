@@ -13,8 +13,8 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import mean_squared_error
 from common import read_data
 
-DATA_TRAIN = "data/data_train_clean.csv"
-SAMPLE_SUBMISSION = "data/sampleSubmission_clean.csv"
+DATA_TRAIN = "../data/data_train_clean.csv"
+SAMPLE_SUBMISSION = "../data/sampleSubmission_clean.csv"
 
 def do_nmf(data_raw,impute_params):
     data = data_raw.pivot(index="User", columns="Movie", values="Prediction").to_numpy()
@@ -57,7 +57,9 @@ def regress(data):
 
 
 def do(impute_params):
+    logging.info("In pipeline1.do")
     data_raw,data_sub = read_data(DATA_TRAIN,SAMPLE_SUBMISSION)
     dense_data = do_nmf(data_raw,impute_params)
     preds = regress(dense_data)
-    np.savez_compressed("results/imputed_preds.npz",preds)
+    np.savez_compressed("../results/imputed_preds.npz",preds)
+    logging.info('return from pipeline1.do')

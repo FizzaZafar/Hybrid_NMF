@@ -20,7 +20,7 @@ More information can be found in [baselines](https://github.com/suprajasridhara/
 
 
 ## Implementation
-The implementation of our proposed method can be found in [\src](https://github.com/suprajasridhara/hybrid_nmf/tree/master/src). The command line interface supports different arguments. For more details run `python3 scr/main.py -h' or see [README]()
+The implementation of our proposed method can be found in [\src](https://github.com/suprajasridhara/hybrid_nmf/tree/master/src). The command line interface supports different arguments. For more details run `python3 scr/main.py -h` or see [README](https://github.com/suprajasridhara/hybrid_nmf/blob/master/src/README.md)
 
 ## More Info
 For a more detailed discussion about the method and the evaluation steps used see the [report](https://TODO:add_link_to_report)

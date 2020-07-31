@@ -1,4 +1,4 @@
-|Validation RMSE | Test RMSE | Parameters         |
+|Validation RMSE | Test RMSE | Parameters |
 | ------------- | ------------- | ----- | ---- |
 |NMF                | 1.0714975                | 1.18537            | epochs = 200, |factors = 200 |
 |SVDpp              | 1.0168                   | 1.23459            | epochs = 200, factors = 200 |

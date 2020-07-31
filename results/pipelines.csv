@@ -1,0 +1,7 @@
+Algorithm,RMSE,Type
+Pipeline1,0.83242,Validation
+Pipeline1,0.97941,Test
+Pipeline2,0.94062,Validation
+Pipeline2,1.04498,Test
+Combined,0.86663,Validation
+Combined,0.97429,Test
